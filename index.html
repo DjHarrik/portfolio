@@ -1,176 +1,550 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
-    rel="stylesheet"/>
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 </head>
+
 <body>
-    <header class="header">
-        <a href="a" class="logo">Portfolio</a>
+  <header class="responsiveHeader">
+    <!-- Logo -->
+    <a href="#" class="logo text-2xl font-bold text-white px-6 py-4 hover:text-cyan-300 transition-all">Harshit Kumar</a>
+  
+    <!-- Hamburger Menu -->
+    <div class="ham-menu-container relative">
+      <button id="menu-btn"
+        class="ham-menu-icon flex items-center justify-center p-3 text-white bg-blue-600 rounded-full shadow-lg hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-300">
+        <svg id="menu-icon" class="w-6 h-6" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+  
+      <!-- Overlay -->
+      <div id="overlay" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 hidden z-40"></div>
+  
+      <!-- Sidebar -->
+      <div id="sidebar"
+        class="pt-8 px-6 bg-gray-900 text-white fixed top-0 left-0 w-72 h-full transform -translate-x-full transition-transform duration-300 z-50 shadow-lg">
+        <!-- Close Button -->
+        <button id="close-btn"
+          class="absolute top-4 right-4 text-white p-2 rounded-full hover:bg-gray-700 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+  
+        <!-- Menu Title -->
+        <h2 class="text-xl font-semibold mb-6 text-center border-b border-gray-600 pb-4">Navigation Menu</h2>
+  
+        <!-- Menu Links -->
+        <a href="#home" class="menu-item block py-3 px-4 text-lg rounded-lg hover:bg-blue-600 hover:text-white transition-all border-b border-gray-700">Home</a>
+        <a href="#about" class="menu-item block py-3 px-4 text-lg rounded-lg hover:bg-blue-600 hover:text-white transition-all border-b border-gray-700">About Me</a>
+        <a href="#projects" class="menu-item block py-3 px-4 text-lg rounded-lg hover:bg-blue-600 hover:text-white transition-all border-b border-gray-700">Projects</a>
+        <a href="#skills" class="menu-item block py-3 px-4 text-lg rounded-lg hover:bg-blue-600 hover:text-white transition-all border-b border-gray-700">Skills</a>
+        <a href="#services" class="menu-item block py-3 px-4 text-lg rounded-lg hover:bg-blue-600 hover:text-white transition-all border-b border-gray-700">Services</a>
+        <a href="#contact" class="menu-item block py-3 px-4 text-lg rounded-lg hover:bg-blue-600 hover:text-white transition-all border-b border-gray-700">Contact</a>
+      </div>
+    </div>
+  </header>
+  
 
-        <nav class ="navbar">
-            <a href="#" style="--i:1"class="active">Home</a>
-            <a href="#" style="--i:2">About</a>
-            <a href="#" style="--i:3">Skill</a>
-            <a href="#" style="--i:4">Portfollo</a>
-            <a href="#" style="--i:5">Contact</a>
-        </nav>
-    </header>
-    <section class ="home">
-        <div class="home-content">
-            <h3>Hi there,It's Me</h3>
-            <h1> Harshit Kumar</h1>
-            <h3>And I'm a <spam class="text"></spam></h3>
-            <p>I'm a web designer with extensive exprience
-            <br>expertise is to create and website,front design , and 
-            <br> and many more..</p>
-            <div class="home-scl">
-                <a href="#" style="--i:6"><i class="ri-mail-line"></i></i></a>
-                <a href="#" style="--i:7"><i class="ri-instagram-line"></i></a>
-                
-                <a href="#" style="--i:8"><i class="ri-whatsapp-line"></i></a>
-                <a href="#" style="--i:9"><i class="ri-twitter-x-line"></i></a>
-            </div>
-            <a href="#" class="btn-box">More About Me</a>
-        </div>
-        <div class="home-img">
-            <div class="glowing-circle">
-                <span></span>
-                <span></span>
-                <div class="image">
-                    <img src="my pic.png" alt="pic">
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="about" >
-        <div class="home-img">
-            <div class="glowing-circle">
-                <span></span>
-                <span></span>
-                <div class="image">
-                    <img src="my pic.png" alt="pic">
-                </div>
-            </div>
-        </div>
-        <div class="about-text">
-            <h2>About<span>Me</span></h2>
-            <h4>Full Stack Developer!</h4>
-            <p>I have a solid educational background with a Master of Computer Application (MCA) from GL Bajaj Institute of Technology and Management, achieving an aggregate of 66.5%, following a Bachelor of Computer Application (BCA) with an aggregate of 56%. I have also completed my secondary and senior secondary education with decent scores.</p>
 
-            <P> My project portfolio showcases practical skills in web development, including creating clones of popular websites like Amazon and YouTube, as well as developing a Women Safety App demonstrating my proficiency in utilizing GPS technology. Additionally, I have participated in coding competitions and possess certificates in Java programming and Cloud Computing.</P>
-                
-            <P>In terms of technical skills, I am proficient in C, Core Java, Data Structures and Algorithms (DSA), Object-Oriented Programming (OOPS) concepts, SQL, HTML, CSS, and Cloud Technologies. I also exhibit interests in various activities such as cooking, chess, traveling, and basketball.</p>
-            <a href="#" class="btn-box">More About Me</a>
+
+
+  <header class="header fixed top-0 left-0 w-full bg-gradient-to-r from-gray-900 via-gray-800 to-black shadow-lg z-50">
+    <!-- Logo -->
+    <a href="#" class="logo text-white text-3xl font-bold hover:text-cyan-400 transition-all duration-300">
+      Harshit Kumar
+    </a>
+  
+    <!-- Navbar -->
+    <nav class="navbar flex space-x-8 text-white font-medium text-lg">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+  </header>
+  
+
+  <section id="home"
+    class="home  bg-gradient-to-b from-zinc-800 via-black to-gray-800">
+    <div
+      class="responsive-introduction text-center lg:text-left sm:w-100% lg:w-100% w-100% space-y-10 p-6 bg-gradient-to-t from-gray-900 via-black to-zinc-900 rounded-lg shadow-xl">
+      <h3 class="text-lg font-semibold text-blue-400">👋 Hi there,It's Me,</h3>
+      <h1 class="text-4xl   font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-teal-400">
+        Harshit Kumar
+      </h1>
+      <h3 class="text-[23px] font-medium text-gray-200">
+        A Passionate<br> <span class="text text-blue-400 font-bold " id="typed-text"></span>
+      </h3>
+      <p class="text-gray-400 leading-relaxed max-w-md mx-auto lg:mx-0">
+        Crafting modern and innovative web experiences is my forte. Let's build something extraordinary together.
+      </p>
+
+      <div class="flex justify-center lg:justify-start space-x-6 mt-6">
+        <a href="#" class="social-icon"><i class="ri-mail-line"></i></a>
+        <a href="#" class="social-icon"><i class="ri-instagram-line"></i></a>
+        <a href="#" class="social-icon"><i class="ri-whatsapp-line"></i></a>
+        <a href="#" class="social-icon"><i class="ri-twitter-line"></i></a>
+      </div>
+
+      <div class="mt-8">
+        <a href="#about" class="btn-box">
+          More About Me
+        </a>
+      </div>
+    </div>
+
+
+    <div class="home-content">
+      <h3>Hi there,It's Me</h3>
+      <h1> Harshit Kumar</h1>
+      <h3>And I'm a <spam class="text"></spam>
+      </h3>
+      <p>I'm a web designer with extensive exprience
+        <br>expertise is to create and website,front design , and
+        <br> and many more..
+      </p>
+      <div class="home-scl">
+        <a href="#" style="--i:6"><i class="ri-mail-line"></i></i></a>
+        <a href="#" style="--i:7"><i class="ri-instagram-line"></i></a>
+
+        <a href="#" style="--i:8"><i class="ri-whatsapp-line"></i></a>
+        <a href="#" style="--i:9"><i class="ri-twitter-x-line"></i></a>
+      </div>
+      <a href="#" class="btn-box">More About Me</a>
+    </div>
+    <div class="home-img">
+      <div class="glowing-circle">
+        <span></span>
+        <span></span>
+        <div class="image">
+          <img src="my pic.png" alt="pic">
         </div>
-    </section>
-    <section>
-        <div class="services">
-            <div class="container">
-                <div  class="sub-title">My<spam>Services</spam></div>
-                <div class="services-list">
-                    <div>
-                        <i class="ri-crop-line"
-                        style='color: #00eeff'></i>
-                        <h2>UI/UX Design</h2>
-                        <p>Lorem ipsum dolor sit amets consectetur adipisicing elit. Temporibus fugiat molestiae aliquam expedita sint aut magni illo? Esse maiores mollitia modi hic dolore, libero assumenda explicabo eum, quo temporibus saepe!</p>
-                        <a href="#" class="read">learn more</a>
-                    </div>
-                    <div>
-                        <i class="ri-code-line" style='color: #00eeff'></i>
-                    <h2>Web Desi</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus fugiat molestiae aliquam expedita sint aut magni illo? Esse maiores mollitia modi hic dolore, libero assumenda explicabo eum, quo temporibus saepe!</p>
-                    <a href="#" class="read">learn more</a>
-                    </div>
-                    
-            </div>
+      </div>
+    </div>
+  </section>
+  <section id="about" class="about bg-gradient-to-t from-zinc-800 via-black to-gray-800 text-white py-10">
+    <div class="container mx-auto px-6 lg:px-24">
+      <!-- Introduction Section -->
+      <div class="max-w-4xl mx-auto text-center mb-12">
+        <h2 class="text-5xl font-extrabold mb-6">
+          About <span class="text-blue-500">Me</span>
+        </h2>
+        <div class="text-lg text-gray-400 leading-relaxed">
+          Hello! I’m <span class="text-blue-400 font-semibold">Harshit Kumar</span>, a passionate and skilled <span
+            class="text-blue-400 font-semibold">Full Stack Developer</span> with a strong foundation in developing
+          dynamic, responsive, and user-friendly web applications. I specialize in crafting robust solutions that
+          seamlessly integrate frontend and backend technologies.
         </div>
-    </section>
-    <section class="skills10">
-        <div class="container1">
-            <div class="heading-div"> 
-            <h1 class="heading1">Technical Skills</h1>
-            </div>
-            <div class="Technical-bars">
-                <div class="bar">
-                    <i class="ri-html5-fill"></i>
-                    <div class="info">
-                        <span>HTML</span>
-                    </div>
-                    <div class="program-line html">
-                        <span></span>
-                    </div>
-                </div>
-                <div class="bar">
-                    <i class="ri-css3-fill"></i>
-                    <div class="info">
-                        <span>CSS</span>
-                    </div>
-                    <div class="program-line css">
-                        <span></span>
-                    </div>
-                    
-                </div>
-                <div class="bar">
-                    <i class="ri-javascript-line"></i>
-                    <div class="info">
-                        <span>JavaScript</span>
-                    </div>
-                    <div class="program-line JavaScript">
-                        <span></span>
-                    </div>
-                    
-                </div>
-                <div class="bar">
-                    <i class="ri-java-fill"></i>
-                    <div class="info">
-                        <span>Java</span>
-                    </div>
-                    <div class="program-line Java">
-                        <span></span>
-                    </div>
-                    
-                </div>
-                <div class="bar">
-                    <i class="ri-database-2-line"></i>
-                    <div class="info">
-                        <span>SQL</span>
-                    </div>
-                    <div class="program-line SQL">
-                        <span></span>
-                    </div>
-                    
-                </div>
-            </div>
-        </div> 
-    </section>
-    <section class="contact" id ="contact">
-        <h2 class="heading1"><pre>Contact </pre>  <span >Me</span></h2>
-        <form action="#">
-            <div class="input-box">
-                <input type="=text" placeholder="Full Name">
-                <input type="email" placeholder="Email Address">
-            </div>
-            <div class="input-box">
-                <input type="number" placeholder="Mobile Number">
-                <input type="text" placeholder="Email Subject">
-               
-            </div>
-            <div>
-                <textarea name="" id="" cols="30"rows="10" placeholder="Your Message"></textarea>
-                <input type="submit" value="Send Message" class="read">
-            </div>
-        </form>
-    </section>
-    
-    <script src="main.js"></script> 
-    <script src="main1.js"></script>
-    
+      </div>
+
+      <!-- About Details -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <!-- Left Column -->
+        <div class="about-text space-y-6">
+          <h3 class="text-3xl font-semibold">
+            Full Stack Developer with a Focus on Modern Web Solutions
+          </h3>
+          <p class="leading-7">
+            With expertise in <span class="font-medium text-blue-400">React.js, Node.js, MongoDB,</span> and a deep
+            understanding of modern web frameworks like <span class="font-medium text-blue-400">Next.js</span>, I
+            develop scalable applications that prioritize performance and usability. My background includes integrating
+            APIs, building responsive designs, and deploying solutions in cloud environments.
+          </p>
+          <p class="leading-7">
+            Over the years, I have successfully recreated the functionality of popular platforms such as Amazon and
+            YouTube. I also designed and developed <span class="font-medium text-blue-400">Notes</span>, a website built
+            from the ground up to host educational tutorials. Furthermore, I have worked on meaningful projects,
+            including a personal portfolio and tutorial websites, to document and share my journey with others.
+          </p>
+          <p class="leading-7">
+            I thrive in dynamic environments where creativity and technical precision meet. My hands-on experience
+            includes full-stack development, RESTful API integration, UI/UX optimization, and database management,
+            allowing me to contribute effectively to diverse teams and projects.
+          </p>
+          <div class="flex flex-wrap gap-4 mt-6">
+            <a href="https://www.linkedin.com/in/harshit-kumar-888269228" target="_blank"
+              class="px-6 py-3 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-600 transition duration-300">
+              Connect on LinkedIn
+            </a>
+            <a href="https://github.com/DjHarrik" target="_blank"
+              class="px-6 py-3 bg-gray-800 text-white rounded-lg shadow hover:bg-gray-700 transition duration-300">
+              Visit GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="relative">
+          <div class="bg-gray-800 p-8 rounded-lg shadow-lg">
+            <h4 class="text-2xl font-bold mb-4">
+              Career Highlights
+            </h4>
+            <ul class="space-y-4">
+              <li class="flex items-center gap-3">
+                <span class="text-blue-500 text-lg font-bold ">01.</span>
+                Full Stack Developer at PRD Robotech Solutions<br> (09/2024 - Present)
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="text-blue-500 text-lg font-bold">02.</span>
+                Frontend Developer Intern at Manilla Technologies (08/2023 - 11/2023)
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="text-blue-500 text-lg font-bold">03.</span>
+                Developed an Airbnb-inspired travel app.
+              </li>
+
+              <li class="flex items-center gap-3">
+                <span class="text-blue-500 text-lg font-bold">04.</span>
+                Created educational tutorials and designed a website named Notes entirely from scratch.
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="text-blue-500 text-lg font-bold">05.</span>
+                Design Multiple web clones
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="text-blue-500 text-lg font-bold">06.</span>
+                Develop my own personal portfolio website
+              </li>
+            </ul>
+          </div>
+
+          <!-- Decorative Gradient -->
+          <div
+            class="absolute inset-0 bg-gradient-to-tr from-blue-700 via-gray-800 to-transparent -z-10 opacity-30 rounded-lg blur-xl">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section id="projects" class="projects bg-gradient-to-b from-zinc-800 via-gray-800 to-zinc-900 py-10 text-white">
+    <div class="  mx-auto px-6 lg:px-24">
+      <!-- Section Header -->
+      <div class="text-center mb-12">
+        <h2 class=" sm:text-3xl lg:text-5xl xl:text-5xl text-3xl font-extrabold mb-4">
+          My <span class="text-blue-500">Projects</span>
+        </h2>
+        <div class="text-lg text-gray-400 leading-relaxed">
+          A showcase of my professional work and passion projects, built to solve real-world problems and enhance user
+          experiences.
+        </div>
+      </div>
+      <div
+        class="card bg-gradient-to-br from-gray-800 via-gray-900 to-black shadow-2xl rounded-2xl p-8 transform transition duration-300 hover:-translate-y-2 hover:shadow-xl">
+        <!-- Badge -->
+        <div
+          class="absolute top-5 right-4 bg-gradient-to-r from-blue-600 to-cyan-400 text-white text-xs font-bold py-1.5 px-3 rounded-lg uppercase tracking-wide hidden sm:flex lg:flex xl:flex">
+          Featured Project
+        </div>
+
+        <!-- Title Section -->
+        <div class="flex items-center space-x-3 mb-6">
+          <div class="text-blue-500 bg-gray-700 p-3 rounded-full shadow-md">
+            <i class="ri-stack-line sm:text-xl lg:text-2xl xl:text-2xl text-base"></i>
+          </div>
+          <h3 class=" sm:text-3xl lg:text-4xl xl:text-4xl text-lg font-extrabold text-white">
+            Web Development Notes Platform
+          </h3>
+        </div>
+
+        <!-- Description -->
+        <p class="text-gray-400 text-sm leading-relaxed mb-6">
+          Dive into an extensive collection of web development tutorials and notes. Whether you’re learning React.js,
+          mastering Node.js, or exploring advanced JavaScript, this platform has everything to guide your journey.
+        </p>
+
+        <!-- Highlights -->
+        <div class="mb-6">
+          <ul class="text-sm text-gray-400 space-y-3">
+            <li class="flex items-center"><i class="ri-check-line text-green-400 text-xl mr-2"></i> Fully responsive
+              across devices</li>
+            <li class="flex items-center"><i class="ri-code-box-line text-blue-400 text-xl mr-2"></i> In-depth tutorials
+              with examples</li>
+            <li class="flex items-center"><i class="ri-layout-line text-purple-400 text-xl mr-2"></i> Built with
+              React.js & Tailwind CSS</li>
+            <li class="flex items-center"><i class="ri-rocket-line text-yellow-400 text-xl mr-2"></i> Modern and
+              scalable design</li>
+          </ul>
+        </div>
+
+        <!-- Divider -->
+        <div class="h-px w-full bg-gray-700 mb-6"></div>
+
+        <!-- Action Buttons -->
+        <div class="flex justify-between items-center">
+          <div class="text-center">
+            <a href="#notes"
+              class="px-6 py-3 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-600 transition duration-300 hidden sm:flex lg:flex xl:flex">
+              Start Learning
+            </a>
+          </div>
+
+          <a href="#"
+            class="btn bg-gradient-to-r from-blue-500 to-cyan-400 text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg hover:shadow-blue-400 hover:scale-105 transition">
+            Explore Project
+          </a>
+        </div>
+      </div>
+
+
+
+    </div>
+  </section>
+
+  <section id="skills" class="skills py-20 bg-gradient-to-b from-zinc-900 via-black to-zinc-900 text-white">
+    <div class="container mx-auto px-8">
+      <!-- Section Title -->
+      <div class="text-center mb-16">
+        <h1
+          class="xs:text-3xl sm:text-3xl lg:text-5xl xl:text-5xl text-2xl font-extrabold text-cyan-400 leading-tight title-gradient">
+          My Technical Skills
+        </h1>
+        <div
+          class="xs:text-3xl sm:text-[17px] lg:text-lg xl:text-lg lg:pt-3 xl:pt-3 sm:pt-2 text-sm    text-gray-300 mt-4">
+          Continuously improving and mastering new technologies.
+        </div>
+      </div>
+
+      <!-- Skills List -->
+      <div class="skills-list space-y-8">
+        <!-- Skill: HTML -->
+        <div class="skill-item">
+          <div class="flex items-center mb-2">
+            <i class="ri-html5-fill text-orange-500  sm:text-2xl lg:text-3xl xl:text-3xl text-xl mr-4"></i>
+            <h3 class="skill-title sm:text-[17px] lg:text-lg xl:text-lg text-base font-bold flex-1">HTML</h3>
+          </div>
+          <div class="lg:w-3/4 xl:w-[60%]  h-3.5 progress-bar-container relative">
+            <div class="progress-bar" data-percentage="90" style="--bar-color: #f97316;"></div>
+            <span class="percentage absolute inset-y-0 right-4 flex items-center text-white">90%</span>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <div class="flex items-center mb-2">
+            <i class="ri-css3-fill text-blue-500 sm:text-2xl lg:text-3xl xl:text-3xl text-xl mr-4"></i>
+            <h3 class="skill-title sm:text-[17px] lg:text-lg xl:text-lg text-base font-bold flex-1">CSS</h3>
+          </div>
+          <div class="lg:w-3/4 xl:w-[60%] h-3.5 progress-bar-container relative">
+            <div class="progress-bar" data-percentage="80" style="--bar-color: #3b82f6;"></div>
+            <span class="percentage absolute inset-y-0 right-4 flex items-center text-white">80%</span>
+          </div>
+        </div>
+
+        <!-- Skill: JavaScript -->
+        <div class="skill-item">
+          <div class="flex items-center mb-2">
+            <i class="ri-javascript-line text-yellow-400 sm:text-2xl lg:text-3xl xl:text-3xl text-xl mr-4"></i>
+            <h3 class="skill-title sm:text-[17px] lg:text-lg xl:text-lg text-base font-bold flex-1">JavaScript</h3>
+          </div>
+          <div class="lg:w-3/4 xl:w-[60%] h-3.5 progress-bar-container relative">
+            <div class="progress-bar" data-percentage="70" style="--bar-color: #eab308;"></div>
+            <span class="percentage absolute inset-y-0 right-4 flex items-center text-white">70%</span>
+          </div>
+        </div>
+
+        <!-- Skill: Java -->
+        <div class="skill-item">
+          <div class="flex items-center mb-2">
+            <i class="ri-java-fill text-red-500 sm:text-2xl lg:text-3xl xl:text-3xl  text-xl  mr-4"></i>
+            <h3 class="skill-title sm:text-[17px] lg:text-lg xl:text-lg text-base font-bold flex-1">Java</h3>
+          </div>
+          <div class="lg:w-3/4 xl:w-[60%] h-3.5 progress-bar-container relative">
+            <div class="progress-bar" data-percentage="70" style="--bar-color: #ef4444;"></div>
+            <span class="percentage absolute inset-y-0 right-4 flex items-center text-white">70%</span>
+          </div>
+        </div>
+
+        <!-- Skill: React -->
+        <div class="skill-item">
+          <div class="flex items-center mb-2">
+            <i class="ri-reactjs-fill text-cyan-400 sm:text-2xl lg:text-3xl xl:text-3xl text-xl mr-4"></i>
+            <h3 class="skill-title sm:text-[17px] lg:text-lg xl:text-lg text-base font-bold flex-1">React</h3>
+          </div>
+          <div class=" lg:w-3/4 xl:w-[60%] h-3.5 progress-bar-container relative">
+            <div class=" progress-bar" data-percentage="70" style="--bar-color: #22d3ee;"></div>
+            <span class="percentage absolute inset-y-0 right-4 flex items-center text-white">70%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="services" class="services py-7 bg-gradient-to-r from-zinc-900 via-black to-zinc-900 text-white">
+    <div class="container mx-auto  px-16">
+      <!-- Title -->
+      <h2 class="text-center   sm:text-3xl lg:text-5xl xl:text-5xl text-3xl font-bold mb-12">
+        My <span class="text-cyan-400">Services</span>
+      </h2>
+
+      <!-- Services List -->
+      <div
+        class="services-list grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-10 xl:gap-20 px-10 sm:px-0 lg:px-0 xl:px-0 2xl:px-0">
+        <!-- Card 1 -->
+        <div
+          class="p-8 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl shadow-xl hover:shadow-cyan-400 transition transform hover:-translate-y-3">
+          <div class="flex items-center justify-center mb-6 text-cyan-400">
+            <i class="ri-crop-line text-5xl"></i>
+          </div>
+          <h3 class="text-2xl font-semibold text-center mb-4">UI/UX Design</h3>
+          <p class="text-gray-300 text-sm leading-relaxed text-center ">
+            Crafting intuitive and visually appealing user interfaces and experiences that align with modern design
+            principles.
+          </p>
+          <a href="#"
+            class="read inline-block bg-cyan-400 text-black px-6 py-2 rounded-full font-semibold text-sm hover:bg-cyan-300 transition">
+            Learn More
+          </a>
+        </div>
+
+        <!-- Card 2 -->
+        <div
+          class="p-8 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl shadow-xl hover:shadow-cyan-400 transition transform hover:-translate-y-3">
+          <div class="flex items-center justify-center mb-6 text-cyan-400">
+            <i class="ri-code-line text-5xl"></i>
+          </div>
+          <h3 class="text-2xl font-semibold text-center mb-4">Web Design</h3>
+          <p class="text-gray-300 text-sm leading-relaxed text-center ">
+            Designing responsive, modern websites with robust front-end solutions that ensure excellent user
+            interaction.
+          </p>
+          <a href="#"
+            class="read inline-block bg-cyan-400 text-black px-6 py-2 rounded-full font-semibold text-sm hover:bg-cyan-300 transition">
+            Learn More
+          </a>
+        </div>
+
+        <!-- Card 3 -->
+        <div
+          class="p-8 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl shadow-xl hover:shadow-cyan-400 transition transform hover:-translate-y-3">
+          <div class="flex items-center justify-center mb-6 text-cyan-400">
+            <i class="ri-tools-line text-5xl"></i>
+          </div>
+          <h3 class="text-2xl font-semibold text-center mb-4">Full-Stack Development</h3>
+          <p class="text-gray-300 text-sm leading-relaxed text-center  ">
+            Building complete web applications with strong back-end support and seamless API integrations.
+          </p>
+          <a href="#"
+            class="read inline-block bg-cyan-400 text-black px-6 py-2 rounded-full font-semibold text-sm hover:bg-cyan-300 transition">
+            Learn More
+          </a>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+  <div class="flex flex-col lg:flex-row justify-evenly items-center w-full py-16 px-8 lg:px-16 bg-gradient-to-t from-gray-800 to-black text-white space-y-8 lg:space-y-0">
+  
+    <!-- Heading -->
+    <h2 class="text-center sm:text-3xl lg:text-5xl font-extrabold tracking-wide leading-tight">
+      To <span class="text-cyan-200 hover:text-cyan-400 transition">know more</span>
+      <span class="inline-block text-2xl ml-2 p-2 rotate-0 transform hover:rotate-45 transition duration-300">-&gt;</span>
+    </h2>
+  
+    <!-- Button -->
+    <a href="./Harshit Kumar Resume.pdf" download
+      class="bg-gradient-to-r from-blue-500 to-cyan-400 px-8 py-3 rounded-full text-lg font-semibold shadow-md hover:shadow-blue-400 hover:scale-105 active:scale-95 transition-all duration-300">
+      Download CV
+    </a>
+  </div>
+  
+
+
+
+  <section id="contact" class="contact bg-gradient-to-r from-[#1f2a40] via-gray-800 to-zinc-700 text-white py-20"
+    id="contact">
+    <div class="container mx-auto px-8 md:px-16">
+      <!-- Heading -->
+      <h2 class="xs:text-3xl sm:text-3xl lg:text-5xl xl:text-5xl  text-2xl  font-bold text-center mb-10">
+        <span class="text-cyan-400">Contact </span><span class="text-yellow-500">Me</span>
+      </h2>
+
+      <!-- Contact Form -->
+      <form action="#" class="max-w-4xl mx-auto bg-black p-8 rounded-xl shadow-xl space-y-6">
+        <!-- Input Fields -->
+        <div class="input-box grid grid-cols-1 md:grid-cols-2 gap-6">
+          <input type="text" placeholder="Full Name" class="input-field" required>
+          <input type="email" placeholder="Email Address" class="input-field" required>
+        </div>
+        <div class="input-box grid grid-cols-1 md:grid-cols-2 gap-6">
+          <input type="number" placeholder="Mobile Number" class="input-field" required>
+          <input type="text" placeholder="Email Subject" class="input-field" required>
+        </div>
+        <div class="input-box">
+          <textarea placeholder="Your Message" class="input-field resize-none" rows="6" required></textarea>
+        </div>
+        <div class="flex justify-center mt-6">
+          <input type="submit" value="Send Message"
+            class="btn-submit px-8 py-3 text-white font-bold rounded-lg cursor-pointer transform hover:scale-105 transition-all duration-300">
+        </div>
+      </form>
+    </div>
+  </section>
+  <footer class="bg-gradient-to-r from-gray-900 via-gray-800 to-black text-white py-8">
+    <div class="container mx-auto px-6 lg:px-12 flex flex-col lg:flex-row justify-between items-center gap-6">
+      <!-- Left Section -->
+      <div class="text-center lg:text-left">
+        <h3 class="text-lg lg:text-xl font-semibold">Developed by Harshit Kumar</h3>
+        <p class="mt-2 text-sm lg:text-base text-gray-400">
+          Full-Stack Developer | React, Angular, Node.js, Next.js Enthusiast
+        </p>
+        <p class="mt-1 text-xs lg:text-sm text-gray-500">
+          No © issues as we are in 2024.
+        </p>
+      </div>
+  
+      <!-- Social Links -->
+      <div class="flex justify-center lg:justify-end gap-6">
+        <a href="https://www.linkedin.com/in/harshit-kumar/" target="_blank"
+          class="text-gray-400 hover:text-cyan-300 transition duration-300">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 lg:w-8 lg:h-8" fill="currentColor"
+            viewBox="0 0 24 24">
+            <path
+              d="M19 0h-14c-2.75 0-5 2.25-5 5v14c0 2.75 2.25 5 5 5h14c2.75 0 5-2.25 5-5v-14c0-2.75-2.25-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.27c-.97 0-1.75-.78-1.75-1.75s.78-1.75 1.75-1.75 1.75.78 1.75 1.75-.78 1.75-1.75 1.75zm13.5 10.27h-3v-4.5c0-1.08-.37-1.82-1.31-1.82-.72 0-1.15.48-1.34.94-.07.17-.09.4-.09.64v4.74h-3s.04-7.69 0-8.5h3v1.2c.4-.62 1.12-1.5 2.72-1.5 1.99 0 3.48 1.3 3.48 4.09v4.71z">
+            </path>
+          </svg>
+        </a>
+        <a href="https://github.com/" target="_blank"
+          class="text-gray-400 hover:text-cyan-300 transition duration-300">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 lg:w-8 lg:h-8" fill="currentColor"
+            viewBox="0 0 24 24">
+            <path
+              d="M12 0c-6.63 0-12 5.37-12 12 0 5.3 3.43 9.8 8.2 11.38.6.11.82-.26.82-.58 0-.28-.01-1.02-.02-2-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.32-1.75-1.32-1.75-1.08-.74.08-.72.08-.72 1.19.08 1.81 1.22 1.81 1.22 1.06 1.8 2.79 1.28 3.47.98.11-.77.42-1.28.76-1.57-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.23-3.23-.12-.3-.53-1.51.12-3.14 0 0 1-.32 3.3 1.23.96-.27 1.98-.41 3-.41s2.04.14 3 .41c2.3-1.55 3.3-1.23 3.3-1.23.66 1.63.24 2.84.12 3.14.77.85 1.23 1.92 1.23 3.23 0 4.61-2.81 5.63-5.48 5.93.43.37.81 1.1.81 2.22 0 1.6-.01 2.88-.01 3.26 0 .32.22.69.83.57 4.77-1.58 8.2-6.08 8.2-11.38 0-6.63-5.37-12-12-12z">
+            </path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  
+    <!-- Footer Bottom -->
+    <div class="mt-6 text-center border-t border-gray-700 pt-4">
+      <p class="text-xs text-gray-500">
+        Created with ❤️ and a lot of JavaScript.
+      </p>
+    </div>
+  </footer>
+  
+
+
+
+  <script src="main.js"></script>
+  <script src="main1.js"></script>
+
 </body>
+
 </html>
