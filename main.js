@@ -98,7 +98,7 @@ document.querySelectorAll('.progress-bar').forEach((bar) => {
     console.log("Form Data to Submit:", data); // Verify payload
   
     try {
-      const response = await fetch("http://localhost:5000/contact", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
