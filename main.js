@@ -94,11 +94,12 @@ document.querySelectorAll('.progress-bar').forEach((bar) => {
   
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
+    const api_backend_URL=process.env.REACT_APP_BACKEND_URL;
   
     console.log("Form Data to Submit:", data); // Verify payload
   
     try {
-      const response = await fetch("https://contact-form-backend-lovat.vercel.app/contact", {
+      const response = await fetch(`${api_backend_URL}/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
