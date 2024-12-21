@@ -4,18 +4,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-
+  <title>Harshit Kumar - Full Stack Developer</title>
+ 
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="/favicon-16x16.png" type="image/x-icon">
+
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
   <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+   <link href="./dist/index.css" rel="stylesheet">
+   <!-- AOS Library for Scroll Animations -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+  // Function to save the scroll position before page unload
+  window.addEventListener('beforeunload', function() {
+    localStorage.setItem('scrollPosition', window.scrollY);
+  });
+
+  // Function to restore the scroll position on page load
+  window.addEventListener('load', function() {
+    const savedScrollPosition = localStorage.getItem('scrollPosition');
+    if (savedScrollPosition) {
+      window.scrollTo(0, parseInt(savedScrollPosition));
+    }
+  });
+</script>
+
+
 </head>
 
 <body>
-  <header class="responsiveHeader">
+  <script>
+    AOS.init({
+      duration: 1200,   
+      once: false,          // Animation happens only once when scrolled
+    });
+  </script>
+
+  <header class="responsiveHeader bg-gradient-to-r from-gray-900 via-gray-800 to-black shadow-lg z-51">
     <!-- Logo -->
-    <a href="#" class="logo text-2xl font-bold text-white px-6 py-4 hover:text-cyan-300 transition-all">Harshit Kumar</a>
+    <a href="#" class="logo   font-serif "><span class="text-4xl">H</span>arshit <span class="text-4xl">k</span>umar</a>
   
     <!-- Hamburger Menu -->
     <div class="ham-menu-container relative">
@@ -61,12 +90,12 @@
 
   <header class="header fixed top-0 left-0 w-full bg-gradient-to-r from-gray-900 via-gray-800 to-black shadow-lg z-50">
     <!-- Logo -->
-    <a href="#" class="logo text-white text-3xl font-bold hover:text-cyan-400 transition-all duration-300">
-      Harshit Kumar
+    <a href="#" class="logo   text-3xl font-bold hover:text-cyan-400 transition-all duration-300  ">
+      Harshit Kumar 
     </a>
   
     <!-- Navbar -->
-    <nav class="navbar flex space-x-8 text-white font-medium text-lg">
+    <nav class="navbar flex space-x-8 text-white font-medium text-base  ">
       <a href="#home" class="nav-link active">Home</a>
       <a href="#about" class="nav-link">About</a>
       <a href="#projects" class="nav-link">Projects</a>
@@ -78,7 +107,7 @@
   
 
   <section id="home"
-    class="home  bg-gradient-to-b from-zinc-800 via-black to-gray-800">
+    class="home  bg-gradient-to-b from-zinc-800 via-black to-gray-800" data-aos="fade-up">
     <div
       class="responsive-introduction text-center lg:text-left sm:w-100% lg:w-100% w-100% space-y-10 p-6 bg-gradient-to-t from-gray-900 via-black to-zinc-900 rounded-lg shadow-xl">
       <h3 class="text-lg font-semibold text-blue-400">👋 Hi there,It's Me,</h3>
@@ -93,11 +122,20 @@
       </p>
 
       <div class="flex justify-center lg:justify-start space-x-6 mt-6">
-        <a href="#" class="social-icon"><i class="ri-mail-line"></i></a>
-        <a href="#" class="social-icon"><i class="ri-instagram-line"></i></a>
-        <a href="#" class="social-icon"><i class="ri-whatsapp-line"></i></a>
-        <a href="#" class="social-icon"><i class="ri-twitter-line"></i></a>
-      </div>
+        <a href="mailto:djjharrik@gmail.com" class="social-icon"><i class="ri-mail-line"></i></a>
+        <a href="https://www.instagram.com/__harrik__/?hl=en" class="social-icon"><i class="ri-instagram-line"></i></a>
+        <a href="https://wa.me/9958029827" class="social-icon" target="_blank" rel="noopener noreferrer">
+          <i class="ri-whatsapp-line"></i>
+        </a>        
+        <a href="http://www.linkedin.com/in/harshit-kumar-888269228" class="social-icon" target="_blank" rel="noopener noreferrer">
+          <i class="ri-linkedin-line"></i>
+        </a>
+        
+       
+        
+        <a href="https://github.com/DjHarrik" class="social-icon" target="_blank" rel="noopener noreferrer">
+          <i class="ri-github-line"></i>
+        </a>      </div>
 
       <div class="mt-8">
         <a href="#about" class="btn-box">
@@ -107,23 +145,30 @@
     </div>
 
 
-    <div class="home-content">
+    <div class="home-content " data-aos="fade-up">
       <h3>Hi there,It's Me</h3>
       <h1> Harshit Kumar</h1>
-      <h3>And I'm a <spam class="text"></spam>
+      <h3 class="text-[23px] font-medium text-gray-200">
+        A Passionate<br> <span class="movingText text-blue-400 font-bold " id="typed-text"></span>
       </h3>
       <p>I'm a web designer with extensive exprience
         <br>expertise is to create and website,front design , and
         <br> and many more..
       </p>
       <div class="home-scl">
-        <a href="#" style="--i:6"><i class="ri-mail-line"></i></i></a>
-        <a href="#" style="--i:7"><i class="ri-instagram-line"></i></a>
+        <a href="mailto:djjharrik@gmail.com" style="--i:6"><i class="ri-mail-line"></i></i></a>
 
-        <a href="#" style="--i:8"><i class="ri-whatsapp-line"></i></a>
-        <a href="#" style="--i:9"><i class="ri-twitter-x-line"></i></a>
+        <a href="https://wa.me/9958029827" style="--i:8"><i class="ri-whatsapp-line"></i></a>
+        <a href="www.linkedin.com/in/harshit-kumar-888269228" class="social-icon" target="_blank" rel="noopener noreferrer">
+          <i class="ri-linkedin-line"></i>
+        </a>
+        <a href="www.linkedin.com/in/harshit-kumar-888269228" class="social-icon" target="_blank" rel="noopener noreferrer">
+          <i class="ri-linkedin-line"></i>
+        </a>
+        <a href="https://www.instagram.com/__harrik__/?hl=en" style="--i:7"><i class="ri-instagram-line"></i></a>
+
       </div>
-      <a href="#" class="btn-box">More About Me</a>
+      <a href="#about" class="btn-box">More About Me</a>
     </div>
     <div class="home-img">
       <div class="glowing-circle">
@@ -135,7 +180,7 @@
       </div>
     </div>
   </section>
-  <section id="about" class="about bg-gradient-to-t from-zinc-800 via-black to-gray-800 text-white py-10">
+  <section id="about" class="about bg-gradient-to-t from-zinc-800 via-black to-gray-800 text-white py-20"  data-aos="fade-up">
     <div class="container mx-auto px-6 lg:px-24">
       <!-- Introduction Section -->
       <div class="max-w-4xl mx-auto text-center mb-12">
@@ -232,7 +277,7 @@
 
 
 
-  <section id="projects" class="projects bg-gradient-to-b from-zinc-800 via-gray-800 to-zinc-900 py-10 text-white">
+  <section id="projects" class="projects bg-gradient-to-b from-zinc-800 via-gray-800 to-zinc-900 py-20 text-white"  data-aos="fade-up">
     <div class="  mx-auto px-6 lg:px-24">
       <!-- Section Header -->
       <div class="text-center mb-12">
@@ -257,7 +302,7 @@
           <div class="text-blue-500 bg-gray-700 p-3 rounded-full shadow-md">
             <i class="ri-stack-line sm:text-xl lg:text-2xl xl:text-2xl text-base"></i>
           </div>
-          <h3 class=" sm:text-3xl lg:text-4xl xl:text-4xl text-lg font-extrabold text-white">
+          <h3 class=" sm:text-3xl lg:text-4xl xl:text-4xl text-xl font-extrabold text-white">
             Web Development Notes Platform
           </h3>
         </div>
@@ -306,8 +351,8 @@
     </div>
   </section>
 
-  <section id="skills" class="skills py-20 bg-gradient-to-b from-zinc-900 via-black to-zinc-900 text-white">
-    <div class="container mx-auto px-8">
+  <section id="skills" class="skills py-20 bg-gradient-to-b from-zinc-900 via-black to-zinc-900 text-white"  data-aos="fade-up">
+    <div class="  mx-auto px-8">
       <!-- Section Title -->
       <div class="text-center mb-16">
         <h1
@@ -385,8 +430,9 @@
   </section>
 
 
-  <section id="services" class="services py-7 bg-gradient-to-r from-zinc-900 via-black to-zinc-900 text-white">
-    <div class="container mx-auto  px-16">
+  <section id="services" class="services  bg-gradient-to-r from-zinc-900 via-black to-zinc-900 text-white  "  data-aos="fade-up"
+  style="padding-top: 88px; padding-bottom: 80px;">
+    <div class="  mx-auto  px-5  sm:px-12  lg:px-16 xl:px-16">
       <!-- Title -->
       <h2 class="text-center   sm:text-3xl lg:text-5xl xl:text-5xl text-3xl font-bold mb-12">
         My <span class="text-cyan-400">Services</span>
@@ -430,8 +476,7 @@
         </div>
 
         <!-- Card 3 -->
-        <div
-          class="p-8 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl shadow-xl hover:shadow-cyan-400 transition transform hover:-translate-y-3">
+        <div class="p-8 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl shadow-xl hover:shadow-cyan-400 transition transform hover:-translate-y-3">
           <div class="flex items-center justify-center mb-6 text-cyan-400">
             <i class="ri-tools-line text-5xl"></i>
           </div>
@@ -451,14 +496,14 @@
   <div class="flex flex-col lg:flex-row justify-evenly items-center w-full py-16 px-8 lg:px-16 bg-gradient-to-t from-gray-800 to-black text-white space-y-8 lg:space-y-0">
   
     <!-- Heading -->
-    <h2 class="text-center sm:text-3xl lg:text-5xl font-extrabold tracking-wide leading-tight">
+    <h2 class="text-center sm:text-3xl lg:text-5xl text-2xl font-extrabold tracking-wide leading-tight">
       To <span class="text-cyan-200 hover:text-cyan-400 transition">know more</span>
-      <span class="inline-block text-2xl ml-2 p-2 rotate-0 transform hover:rotate-45 transition duration-300">-&gt;</span>
+      <span class=" text-2xl ml-2 p-2 rotate-0 transform hover:rotate-45 transition duration-300 sm:inline-block lg:inline-block xl:inline-block  hidden">-&gt;</span>
     </h2>
   
     <!-- Button -->
     <a href="./Harshit Kumar Resume.pdf" download
-      class="bg-gradient-to-r from-blue-500 to-cyan-400 px-8 py-3 rounded-full text-lg font-semibold shadow-md hover:shadow-blue-400 hover:scale-105 active:scale-95 transition-all duration-300">
+      class="bg-gradient-to-r from-blue-500 to-cyan-400 px-8 py-3 rounded-full text-base lg:text-lg font-semibold shadow-md hover:shadow-blue-400 hover:scale-105 active:scale-95 transition-all duration-300">
       Download CV
     </a>
   </div>
@@ -467,26 +512,27 @@
 
 
   <section id="contact" class="contact bg-gradient-to-r from-[#1f2a40] via-gray-800 to-zinc-700 text-white py-20"
-    id="contact">
+  data-aos="fade-up">
     <div class="container mx-auto px-8 md:px-16">
       <!-- Heading -->
-      <h2 class="xs:text-3xl sm:text-3xl lg:text-5xl xl:text-5xl  text-2xl  font-bold text-center mb-10">
+      <h2 class=" sm:text-3xl lg:text-5xl xl:text-5xl  text-3xl  font-bold text-center mb-10">
         <span class="text-cyan-400">Contact </span><span class="text-yellow-500">Me</span>
       </h2>
 
       <!-- Contact Form -->
-      <form action="#" class="max-w-4xl mx-auto bg-black p-8 rounded-xl shadow-xl space-y-6">
+ 
+      <form method="POST" class="max-w-4xl mx-auto bg-black text-white p-8 rounded-lg shadow-xl space-y-6">
         <!-- Input Fields -->
-        <div class="input-box grid grid-cols-1 md:grid-cols-2 gap-6">
-          <input type="text" placeholder="Full Name" class="input-field" required>
-          <input type="email" placeholder="Email Address" class="input-field" required>
+        <div class="input-box grid grid-cols-1 md:grid-cols-2 gap-6 ">
+          <input type="text"  name="name"  placeholder="Full Name" class="input-field" required>
+          <input type="email" name="email" placeholder="Email Address" class="input-field" required>
         </div>
         <div class="input-box grid grid-cols-1 md:grid-cols-2 gap-6">
-          <input type="number" placeholder="Mobile Number" class="input-field" required>
-          <input type="text" placeholder="Email Subject" class="input-field" required>
+          <input type="tel"  name="mobile"  placeholder="Mobile Number" class="input-field" required>
+          <input type="text"  name="subject" placeholder="Email Subject" class="input-field" required>
         </div>
         <div class="input-box">
-          <textarea placeholder="Your Message" class="input-field resize-none" rows="6" required></textarea>
+          <textarea name="message" placeholder="Your Message" class="input-field resize-none" rows="6" required></textarea>
         </div>
         <div class="flex justify-center mt-6">
           <input type="submit" value="Send Message"
@@ -500,29 +546,28 @@
       <!-- Left Section -->
       <div class="text-center lg:text-left">
         <h3 class="text-lg lg:text-xl font-semibold">Developed by Harshit Kumar</h3>
-        <p class="mt-2 text-sm lg:text-base text-gray-400">
+        <p class="mt-2 text-[12px] lg:text-[15px] text-gray-400">
           Full-Stack Developer | React, Angular, Node.js, Next.js Enthusiast
         </p>
-        <p class="mt-1 text-xs lg:text-sm text-gray-500">
-          No © issues as we are in 2024.
+        <p class=" text-[10.5px] lg:text-[13px] xl:text-[13px]  text-gray-400">
+          For the source code or inquiries, connect with me on <a href="http://www.linkedin.com/in/harshit-kumar-888269228" class="text-cyan-400 hover:underline">LinkedIn</a> or call me at <a href="tel:+91 9958029827" class="text-cyan-400 hover:underline">+91 9958029827</a>.
         </p>
+         
       </div>
   
       <!-- Social Links -->
       <div class="flex justify-center lg:justify-end gap-6">
-        <a href="https://www.linkedin.com/in/harshit-kumar/" target="_blank"
+        <a href="http://www.linkedin.com/in/harshit-kumar-888269228" target="_blank"
           class="text-gray-400 hover:text-cyan-300 transition duration-300">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 lg:w-8 lg:h-8" fill="currentColor"
-            viewBox="0 0 24 24">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 lg:w-8 lg:h-8" fill="currentColor" viewBox="0 0 24 24">
             <path
               d="M19 0h-14c-2.75 0-5 2.25-5 5v14c0 2.75 2.25 5 5 5h14c2.75 0 5-2.25 5-5v-14c0-2.75-2.25-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.27c-.97 0-1.75-.78-1.75-1.75s.78-1.75 1.75-1.75 1.75.78 1.75 1.75-.78 1.75-1.75 1.75zm13.5 10.27h-3v-4.5c0-1.08-.37-1.82-1.31-1.82-.72 0-1.15.48-1.34.94-.07.17-.09.4-.09.64v4.74h-3s.04-7.69 0-8.5h3v1.2c.4-.62 1.12-1.5 2.72-1.5 1.99 0 3.48 1.3 3.48 4.09v4.71z">
             </path>
           </svg>
         </a>
-        <a href="https://github.com/" target="_blank"
+        <a href="https://github.com/DjHarrik" target="_blank"
           class="text-gray-400 hover:text-cyan-300 transition duration-300">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 lg:w-8 lg:h-8" fill="currentColor"
-            viewBox="0 0 24 24">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 lg:w-8 lg:h-8" fill="currentColor" viewBox="0 0 24 24">
             <path
               d="M12 0c-6.63 0-12 5.37-12 12 0 5.3 3.43 9.8 8.2 11.38.6.11.82-.26.82-.58 0-.28-.01-1.02-.02-2-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.32-1.75-1.32-1.75-1.08-.74.08-.72.08-.72 1.19.08 1.81 1.22 1.81 1.22 1.06 1.8 2.79 1.28 3.47.98.11-.77.42-1.28.76-1.57-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.23-3.23-.12-.3-.53-1.51.12-3.14 0 0 1-.32 3.3 1.23.96-.27 1.98-.41 3-.41s2.04.14 3 .41c2.3-1.55 3.3-1.23 3.3-1.23.66 1.63.24 2.84.12 3.14.77.85 1.23 1.92 1.23 3.23 0 4.61-2.81 5.63-5.48 5.93.43.37.81 1.1.81 2.22 0 1.6-.01 2.88-.01 3.26 0 .32.22.69.83.57 4.77-1.58 8.2-6.08 8.2-11.38 0-6.63-5.37-12-12-12z">
             </path>
@@ -532,19 +577,29 @@
     </div>
   
     <!-- Footer Bottom -->
-    <div class="mt-6 text-center border-t border-gray-700 pt-4">
-      <p class="text-xs text-gray-500">
-        Created with ❤️ and a lot of JavaScript.
+    <div class="flex justify-center items-center   mt-6 text-center border-t border-gray-700 ">
+      <p class="text-xs text-gray-500"><br>
+        Created with ❤️, a lot of JavaScript, and endless cups of coffee ☕.
       </p>
+     
     </div>
   </footer>
   
+  
 
-
+  <script>
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  </script>
 
   <script src="main.js"></script>
-  <script src="main1.js"></script>
-
+ 
 </body>
 
 </html>

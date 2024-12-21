@@ -7,29 +7,34 @@
 
 html {
     scroll-behavior: smooth;
-    /* Enables smooth scrolling */
 }
 
 body {
-    background: #0c1022;
-    color: #fff;
+    background: linear-gradient(to bottom, #3f3f46, #000000, #1f2937);  
+     color: #fff;
 }
 
 section {
-    scroll-margin-top: 70px;
-    /* Offset for fixed navbar */
+    scroll-margin-top: 80px;
+    opacity: 0;  
+    transition: opacity 1s ease-in-out; 
+
 }
+
+section[data-aos] {
+    opacity: 1; /* Become visible when AOS activates */
+  }
 
 .responsiveHeader {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 10%;
+    padding: 30px 10%;
     background: #081b29;
     display: none;
     justify-content: space-between;
-    align-items: center;
+    align-items: end;
     z-index: 100;
 
 }
@@ -73,6 +78,7 @@ section {
 
 /* Header Styling */
 .header {
+
     padding: 1rem 5%;
     display: flex;
     justify-content: space-between;
@@ -81,7 +87,28 @@ section {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     animation: fadeInn 1s ease forwards;
     opacity: 0;
+    transition: background-color 0.5s ease-in-out;
+
   }
+
+  header.scrolled {
+    background-color: rgba(0, 0, 0, 0.8); /* Darken header on scroll */
+  }
+  @keyframes bounceIn {
+    0% {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .btn-box {
+    animation: bounceIn 1s ease;
+  }
+  
 
 @media screen and (min-width:800px) {
     .header {
@@ -99,38 +126,92 @@ section {
 
 /* Logo */
 .logo {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    transition: transform 0.3s ease, color 0.3s ease;
-    animation: slideRight 1s ease forwards;
-  }
+    font-size: 1.5rem;               
+    font-weight: bold;               
+    color: #fff;                   
+    letter-spacing: 3px;            
+     position: relative;
+    background: linear-gradient(90deg, #22d3ee, #9333ea);   
+    -webkit-background-clip: text;  
+    color: transparent;              
+    transition: transform 0.3s ease-in-out, letter-spacing 0.3s ease-in-out; /* Smooth hover effects */
+}
 
-  .logo:hover {
-    transform: scale(1.1);
-    color: #22d3ee;
-  }
+.logo:hover {
+    transform: scale(1);           
+    letter-spacing: 4px;            /* Increase letter spacing on hover for a dynamic look */
+    color: #22d3ee;                 /* Change text color on hover for contrast */
+    background: linear-gradient(90deg, #9333ea, #22d3ee); /* Reverse gradient on hover */
+    -webkit-background-clip: text;
+    color: transparent;
+}
 
+.logo::before {
+    content: '';                    
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #22d3ee;      /* Cyan underline */
+    bottom: -10px;                  /* Position it just below the text */
+    left: 0;
+    transform: scaleX(0);           /* Start with hidden underline */
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover::before {
+    transform: scaleX(1);           /* Animate the underline on hover */
+    transform-origin: left;
+}
+
+
+/* Navbar Links */
 /* Navbar Links */
 .navbar .nav-link {
     position: relative;
     padding: 5px 0;
     transition: color 0.3s ease, transform 0.3s ease;
-    opacity: 0;
-    animation: slideTopp 0.8s ease forwards;
-  }
+    color: #fff; /* Keep default color white */
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
 
-  .navbar .nav-link:hover {
+/* Hover Effect */
+.navbar .nav-link:hover {
     color: #22d3ee; /* Cyan hover effect */
-    transform: translateY(-3px);
-  }
-  
-  /* Active Link Effect */
-  .navbar .nav-link.active {
+    transform: translateY(-3px); /* Slight hover lift */
+}
+
+/* Underline Hover Effect */
+.navbar .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #06b6d4, #3b82f6); /* Gradient underline */
+    opacity: 0;
+    transform: scaleX(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform-origin: right;
+}
+
+.navbar .nav-link:hover::after {
+    opacity: 1;
+    transform: scaleX(1); /* Expand underline on hover */
+    transform-origin: left;
+}
+
+/* Active Link Effect */
+.navbar .nav-link.active {
     background: linear-gradient(to right, #06b6d4, #3b82f6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: bold;
-  }
+}
+
 
   /* Animations */
 @keyframes fadeInn {
@@ -143,14 +224,14 @@ section {
   }
   @keyframes slideRight {
     0% {
-      transform: translateX(-50px);
-      opacity: 0;
+        transform: translateX(-100%);
+        opacity: 0;
     }
     100% {
-      transform: translateX(0);
-      opacity: 1;
+        transform: translateX(0);
+        opacity: 1;
     }
-  }
+}
   
   @keyframes slideTopp {
     0% {
@@ -276,7 +357,7 @@ section {
     box-shadow: 0 0 5px cyan,
         0 0 25px cyan, 0 0 50px cyan,
         0 0 350px cyan, 0 0 200px cyan
-}
+}        
 
 @keyframes fadeIn {
     0% {

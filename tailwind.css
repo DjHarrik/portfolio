@@ -1,0 +1,4 @@
+/* tailwind.css or index.css in the root folder */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

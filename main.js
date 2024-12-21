@@ -3,6 +3,22 @@
 
 var typed = new Typed(".text", {
     strings: [
+      "Full Stack Developer ",
+      "Web Developer 🚀",
+      "Creative Designer 🎨",
+      "UI/UX Innovator 💡"
+    ],
+    typeSpeed: 70,
+    backSpeed: 50,
+    backDelay: 1000,
+    loop: true,
+    cursorChar: "|",
+    smartBackspace: true
+  });
+
+  var typed = new Typed(".movingText", {
+    strings: [
+      "Full Stack Developer ",
       "Web Developer 🚀",
       "Creative Designer 🎨",
       "UI/UX Innovator 💡"
@@ -71,4 +87,50 @@ document.querySelectorAll('.progress-bar').forEach((bar) => {
       overlay.classList.add("hidden");
     }
   });
+
   
+  document.querySelector("form").addEventListener("submit", async (event) => {
+    event.preventDefault();
+  
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData);
+  
+    console.log("Form Data to Submit:", data); // Verify payload
+  
+    try {
+      const response = await fetch("http://localhost:5000/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+  
+      if (!response.ok) {
+        const error = await response.json();
+        console.error("Error response:", error);
+        alert(error.error || "Failed to submit the form");
+        return;
+      }
+  
+      const result = await response.json();
+      alert(result.message || "Message sent successfully!");
+    } catch (error) {
+      console.error("Error:", error);
+      alert("An error occurred while submitting the form. Please try again later.");
+    }
+  });
+   
+  const sections = document.querySelectorAll('.animated-section');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animate');
+    } else {
+      entry.target.classList.remove('animate'); // This resets the animation
+    }
+  });
+}, { threshold: 0.1 });
+
+sections.forEach(section => {
+  observer.observe(section);
+});
