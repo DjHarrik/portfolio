@@ -89,36 +89,52 @@ document.querySelectorAll('.progress-bar').forEach((bar) => {
   });
 
   
-  document.querySelector("form").addEventListener("submit", async (event) => {
-    event.preventDefault();
-  
-    const formData = new FormData(event.target);
-    const data = Object.fromEntries(formData);
-    const api_backend_URL=process.env.REACT_APP_BACKEND_URL;
-  
-    console.log("Form Data to Submit:", data); // Verify payload
-  
-    try {
-      const response = await fetch(`${api_backend_URL}/contact`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-  
-      if (!response.ok) {
-        const error = await response.json();
-        console.error("Error response:", error);
-        alert(error.error || "Failed to submit the form");
-        return;
+ 
+    document.querySelector("form").addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const formData = new FormData(event.target);
+      const data = Object.fromEntries(formData);
+
+      console.log("Form Data to Submit:", data);  
+
+      try {
+        const response = await fetch("https://contact-form-backend-lovat.vercel.app/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        });
+
+        if (!response.ok) {
+          const error = await response.json();
+          console.error("Error response:", error);
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: error.error || "Failed to submit the form",
+          });
+          return;
+        }
+
+        const result = await response.json();
+        Swal.fire({
+          icon: "success",
+          title: "Success!",
+          text: result.message || "Message sent successfully!",
+        });
+
+        // Reset the form after successful submission
+        event.target.reset();
+      } catch (error) {
+        console.error("Error:", error);
+        Swal.fire({
+          icon: "error",
+          title: "Error!",
+          text: "An error occurred while submitting the form. Please try again later.",
+        });
       }
-  
-      const result = await response.json();
-      alert(result.message || "Message sent successfully!");
-    } catch (error) {
-      console.error("Error:", error);
-      alert("An error occurred while submitting the form. Please try again later.");
-    }
-  });
+    });
+ 
    
   const sections = document.querySelectorAll('.animated-section');
 
